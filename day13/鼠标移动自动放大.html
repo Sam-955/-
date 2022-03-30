@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            display: flex;
+            perspective: 1000px;
+            margin: 100px 100px;
+            transition: all 2s;
+        }
+        .box div{
+
+            height: 200px;
+            width: 200px;
+            margin-right: 2px;
+            background-color: lightgray;
+        }
+        .box .image2{
+            /*transform: translateZ(200px);*/
+            background-color: pink;
+        }
+        .box .image1{
+            /*transform: translateZ(200px);*/
+            background-color: skyblue;
+        }
+        .box .image3{
+            /*transform: translateZ(200px);*/
+            background-color: slateblue;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="image1">box1</div>
+    <div class="image2">box2</div>
+    <div class="image3">box3</div>
+</div>
+<script>
+    var image1=document.querySelector(".image3")
+    image1.onmouseover=function (){
+        image1.style.transform='translateZ(200px)'
+    }
+    image1.onmouseout=function (){
+        image1.style.transform='translateZ(0px)'
+    }
+</script>
+<!--效果是两边的块往旁边走，中间的向两边扩-->
+</body>
+</html>

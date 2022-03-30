@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--归并排序
+分治策略,递归的将数组两两分开直到只包含一个元素，然后 将数组排序合并，最终合并为排序好的数组
+先将一个数组分为一个一个的如同树中的叶子节点，然后再将这些叶子节点有序的
+恢复成颗树状
+
+时间复杂度 nlogn 最坏时间复杂度 nlogn 空间 n (需要一个result 存储数组)，
+-->
+<script>
+    let arr=[5,9,8,2,6,10,15]
+    function mergSort(arr){  // 通过递归先将一个数组一直二分，得到最后一个arr里面只有一个元素，然后回溯调用合并函数
+        if (!Array.isArray(arr) || length === 0) return;
+        if(arr.length===1){
+            return arr
+        }
+        let mid=parseInt(arr.length>>1)
+        let left_arr=arr.slice(0,mid) // 注意 这里的切片最后一个mid 不取值，0~mid-1
+        let rigth_arr=arr.slice(mid,arr.length)
+        return (sub_merg(mergSort(left_arr),mergSort(rigth_arr)))
+        //递归结束条件
+    }
+    function sub_merg(left_arr,rigth_arr){ // 将左右子树上的元素合并到一个result数组里面
+        let result=[]
+        // 思路：遍历两边数组的每个元素，然后比较他们的大小，然后加入到result数组中，然后剩下的再单独加入到数组
+        let left_length=left_arr.length;
+        let right_length=rigth_arr.length;
+        // 这里两个指针，分别在两个数组里面索引元素
+        let l_index=0;
+        let r_index=0;
+        // 当指针到达数组最后以后，表示两边比较已经完成，然后把多的直接放到result中
+        while(l_index<left_length && r_index<right_length){
+            if(left_arr[l_index]<rigth_arr[r_index]){
+                result.push(left_arr[l_index++])
+            }
+            else{
+                result.push(rigth_arr[r_index++])
+            }
+        }
+        while(l_index<left_length){
+            result.push(left_arr[l_index++])
+        }
+        while(r_index<right_length){
+            result.push(right_arr[r_index++])
+        }
+        console.log(result)
+        return result;
+    }
+    console.log(mergSort(arr))
+
+</script>
+
+
+</body>
+</html>

@@ -1,0 +1,75 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<!--<script>-->
+<!--    console.log("怎么回事呢")-->
+<!--    let [a, b, c] = [1, 2, 3];-->
+<!--    // a = 1，b = 2，c = 3 相当于重新定义了变量a,b,c，取值也更加方便-->
+
+<!--    // , = 占位符-->
+<!--    let arr = ["小明", "小花", "小鱼", "小猪"];-->
+<!--    let [,,one] = arr; // 这里会取到小鱼-->
+
+<!--    // 解构整个数组-->
+<!--    let strArr = [...arr];-->
+<!--    // 得到整个数组-->
+<!--    console.log(strArr);-->
+
+<!--</script>-->
+
+<script>
+    // 箭头函数的this在定义的时候就会确定其指向的对象
+    function fn3(){
+        setTimeout(()=>{
+            // 定义时，this 绑定的是 fn3 中的 this 对象
+            console.log(this.a);
+        },0)
+    }
+    var a = 10;
+    // fn3 的 this 对象为 {a: 10}，因为它指向全局: window.a
+    fn3.call({a: 18});  // 改变this指向，此时 a = 18
+
+</script>
+<script>
+    let Person1 = {
+        'age': 18,
+        'sayHello': function () {
+            setTimeout(()=>{
+                console.log(this.age);
+            });
+        }
+    };
+    var age = 20;
+    Person1.sayHello();  // 18
+
+</script>
+<script>
+    // ES6中的类实例化
+    class Demo {
+        constructor(a, b) {
+            this.a = a;
+            this.b = b;
+            console.log('Demo');
+        }
+        sum() {
+            return this.a + this.b;
+        }
+    }
+    let demo1 = new Demo(2, 1);
+    let demo2 = new Demo(3, 1); // 声明一个对象
+    // 两者原型链是相等的
+    console.log(demo1._proto_ == demo2._proto_); // true
+
+    // demo1._proto_.sub= function() {   // 在实例对象的隐式原型加入 sub属性方法
+    //     return this.a - this.b;
+    // }
+    Demo.prototype.sub=function (){return this.a-this.b}
+    console.log(demo1.sub()); // 1
+    console.log(demo2.sub()); // 2
+</script>
+</body>
+</html>

@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="数值" id="number">
+<button id="btn" style="align-content: center;font-size: 10px ">计算</button>
+<script type="text/javascript">
+    var input = document.getElementById('number')
+    function fibonacci(n){
+        return n<=2 ?1:fibonacci(n-1)+fibonacci(n-2)
+    }
+    document.getElementById("btn").onclick=function (){
+        var number=input.value
+        var result=fibonacci(number)
+        alert(result)
+    }
+
+</script>
+
+</body>
+</html>
+<!--
+多线程
+  1. 可以将大量需要计算的代码放到分线程web worker运行而不冻结用户界面
+     但是子线程还是接受主线程的控制，而且不得操作DOM，所以，并没有改变js
+     单线程的本质
+  2. 使用：
+       创建在分线程执行的js文件
+       在主线程中的js中发消息并设置回调
+
+
+
+-->

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<script>
+    var isPalindrome = function(x)
+    {
+        if(x<10){
+            return false
+        }
+        var str=" "+x
+        for(let i=0;i<str.length/2;i++){
+            if(x[i]!==x[x.length-i-1]){
+                return false
+            }
+        }
+        return true
+    }
+    console.log(isPalindrome(121))
+</script>
+</body>
+</html>

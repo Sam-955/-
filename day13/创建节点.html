@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<ul></ul>
+<script>
+  var ul =document.querySelector('ul')
+  var li =document.createElement('li')
+  var lii = li.cloneNode(false)
+  li.innerHTML="hello "
+  var lili= document.createElement('li')
+  //后面插入元素
+  ul.appendChild(li)
+  ul.appendChild(lii)
+  // 不能重复添加新建一样的元素
+  ul.insertBefore(li,ul.children[0])
+  ul.insertBefore(lili,ul.children[0])
+//  创建节点需要配合插入节点一起使用，
+//  父节点.createElement("标签名") +父节点.append(创建的节点名) 这样插尾
+</script>
+</body>
+</html>

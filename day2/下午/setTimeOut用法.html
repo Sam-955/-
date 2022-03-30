@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    console.log('hello')
+    setTimeout("alert('等一等等一等')",5000)// setTimeout(要执行的代码, 等待的毫秒数)
+</script>
+</body>
+</html>
+<!--
+执行栈：所有的代码都在此空间执行
+
+浏览器内核： js引擎模块  其它引擎模块
+
+属于回调队列：
+   任务队列：
+   消息队列：
+   事件队列：
+
+事件轮询：从任务队列中循环取出回调函数放入执行栈中处理
+
+事件驱动模型：
+
+请求响应模型： C/S  B/S
+-->

@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 620px;
+            height: 305px;
+            background-color: yellowgreen;
+            margin: 100px auto;
+        }
+        .bar{
+            float: left;
+            width: 150px;
+            height: 305px;
+            background-color: darkviolet;
+            margin-right: 5px;
+        }
+        .content{
+            float:left;
+            width:465px;
+            height: 305px;
+            background-color: pink;
+        }
+        .module1{
+            float:left;
+            width:120px;
+            height: 150px;
+            background-color: skyblue;
+            margin-right: 5px;
+            margin-bottom: 5px;
+        }
+        .module1:nth-child(n+5){
+            margin-bottom: 0;
+        }
+        .module1:nth-child(4n){
+            margin-right: 0px;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="bar"></div>
+    <div class="content">
+        <div class="module1"></div>
+        <div class="module1"></div>
+        <div class="module1"></div>
+        <div class="module1"></div>
+        <div class="module1"></div>
+        <div class="module1"></div>
+        <div class="module1"></div>
+        <div class="module1"></div>
+    </div>
+
+
+</div>
+
+</body>
+</html>

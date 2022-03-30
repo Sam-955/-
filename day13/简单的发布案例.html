@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .showItem{
+            background-color:lightgray;
+            height: 20px;
+            width: 100px;
+        }
+    </style>
+</head>
+<body>
+<textarea></textarea>
+<button> 发布</button>
+<div class="showItem"></div>
+<!-- 动态的创建 元素 -->
+<!--  javascript:  组织链接跳转-->
+<script>
+    var btn= document.querySelector('button')
+    var text=document.querySelector('textarea')
+    var div= document.querySelector('div')
+    btn.addEventListener('click',post)
+    function post(){
+     div.innerHTML=text.value
+    }
+</script>
+
+</body>
+</html>

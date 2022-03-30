@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>媒体标签</title>
+</head>
+<body>
+<!--
+媒体标签：
+   1. 图片
+   2. 路径
+        绝相对路径：
+        同级目录：直接写
+        上级目录：/(根目录),../上一级目录,../../ 上两级目录
+        下级目录: 文件名.名字.png
+   3. 音频  一般支持 mp3、Wav、Ogg
+       <audio src=  controls="控制播放" autoplay=“是否自动播放” loop=“循环播放”
+   4. 视频
+     <audio src=  controls="控制播放" autoplay=“是否自动播放” loop=“循环播放”
+           muted 实现视频的静音播放
+   5. <a
+     属性：
+       href
+       target：_blank  新建一个网页
+              _ parent
+              _self  覆盖原网页
+
+
+-->
+<img src="../素材/1.png" alt=""  title="" width="300" height="300">
+<video src="../素材/和平之鸽.mp4" controls="controls" ></video>
+<audio src="../素材/音频1.wav" controls autoplay muted ></audio>
+<a href="媒体标签.html" target="_blank">超链接</a>
+
+</body>
+</html>

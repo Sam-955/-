@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box>ul{
+            display: flex;
+        }
+        li{
+            list-style: none;
+        }
+        .nav>li{
+            margin-right: 20px;
+
+        }
+        .nav ul {
+            padding-left:0;
+            margin-top: 20px;
+            display: none
+        }
+
+        .nav ul li {
+            padding-left:0;
+            /*margin-top: 20px;*/
+            border: 1px solid pink;
+            border-collapse: collapse;
+            font-size: 20px;
+            /*display: none;*/
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <ul class="nav">
+        <li>
+            <a>微博</a>
+            <ul>
+                <li>
+                    <a href="">私信</a>
+                </li>
+                <li>
+                    <a href="">评论</a>
+                </li>
+                <li>
+                        <a href="">@我</a>
+                </li>
+            </ul>
+
+        </li>
+        <li>
+            <a>微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul></li>
+        <li>
+            <a>微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+        <li>
+            <a>微博</a>
+            <ul>
+                <li>私信</li>
+                <li>评论</li>
+                <li>@我</li>
+            </ul>
+        </li>
+    </ul>
+</div>
+<script>
+    var navlist=document.querySelector('.nav')
+    var lis=navlist.children;
+    for(var i in lis){
+        lis[i].onmouseover=function (){
+            this.children[1].style.display='block'
+        }
+        lis[i].onmouseout=function (){
+            this.children[1].style.display='none'
+        }
+    }
+</script>
+
+</body>
+</html>

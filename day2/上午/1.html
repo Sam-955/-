@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    <!--        这里写一个定时器函数：检查每轮执行一轮是否是定时器所设定的时间-->
+
+    //获得当前时间
+
+    // document.getElementById("cout").onclick=function (){var preTime= new Date()
+        //设定定时器，
+        var preTime= new Date()
+        console.log("点击按钮前----")
+        setTimeout(function (){
+            var nowTime =new Date()
+            console.log(nowTime.getTime()-preTime.getTime())},10)
+        console.log("点击按钮后------")
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 1.声明提升
+    // 此处会正常打印，但这是错误的（属于先上车后买票了！）
+    console.log(name);
+    var name = "大帅比";
+
+    // 2. 变量覆盖
+    var demo = "小明";
+    var demo = "小红";
+    // 此处会打印小红，这也是错误的（属于套牌车，违法的啊，兄弟）
+    // 同一个项目中，发生变量覆盖可能会导致数据丢失以及各种不可预知的bug，原则上来说：变量不能重名
+    console.log(demo)
+
+    // 3. 没有块级作用域
+    function fn2(){
+        for(var i = 0; i < 5; i++){
+            // do something
+        }
+        // 此处会正常打印出 i 的值，这是错误的
+        // i是定义在循环体之内的，只能在循环体内打印，当前现象叫做红杏出墙！！！
+        console.log(i);
+    }
+    fn2();
+
+</script>
+</body>
+</html>
+
+<!--
+ES6新特性
+  一. let与const
+      1.let与var的区别
+         两者都是变量声明的关键字，其中let有块级作用域，var声明变量时不太严谨
+       容易出现值覆盖，变量越区(声明提升)等情况。
+       let就很严谨，不允许声明提前，不允许变量覆盖，而且有块级作用域（循环体内的变量不会越出来）
+      2.const 声明一个常量，一但赋值其值不能更改，这个值可以是地址值，数值，如果是对象值，对像里面的
+        元素还有属性是可以更改的。
+  二. 解构赋值
+      let [a, b, c] = [1, 2, 3];
+      let arr = ["小明", "小花", "小鱼", "小猪"];
+      let [,,one] = arr; // 这里会取到小鱼
+      let strArr = [...arr]; // 这里会得到整个数组
+
+      用在对象上：
+      let obj = { className : "卡西诺",
+                  age: 18}
+      let {className} = obj; // 得到卡西诺
+      let {age} = obj;	// 得到18
+      let {a, b, ...demo} = {a: 1, b: 2, c: 3, d: 4}
+      这里的demo就会被后面的值覆盖
+
+  三. 模板字符串
+        模板字符串相当于加强版的字符串，用反引号 ``除了作为普通字符串，还可以用来定义多行字符串 ，可以在字符串
+     中加入变量和表达式
+     let string = "hello'\n'小兄弟"
+     // hello
+     // 小兄弟
+     let str1  = "穿堂而过的";
+
+     let str2 = "风";
+     // 模板字符串
+     let newStr = `我是${str1}${str2}`;
+      // 我是穿堂而过的风
+      console.log(newStr)
+
+    // 字符串中调用方法
+       function fn3(){
+        return "帅的不行！";
+          }
+       let string2= `我真是${fn3 ()}`;
+       console.log(string2);  // 我真是帅的不行！
+
+  四. ES6函数
+     1.箭头函数（本身没有作用域、箭投函数的this指向上一层，上下文决定其this，基本语法：参数=>函数体）
+        基本用法：
+          let fn = v => v;
+         //等价于
+         let fn = function(num){
+         return num;
+         }
+         fn(100);  // 输出100
+         带参数写法：
+         let fn2 = (num1,num2) => {
+         let result = num1 + num2;
+         return result;
+         }
+         fn2(3,2);  // 输出5
+         箭头函数的this指向问题 ，没搞清楚，以及适用场景没搞清楚
+     2.函数参数的扩展
+         1. 不定参数的写法
+            // 此处的values是不定的，且无论你传多少个
+            function f(...values){
+                console.log(values.length);
+            }
+            f(1,2);      // 2
+            f(1,2,3,4);  // 4
+         2. 函数可以带默认参数
+
+  五. class类
+       class 的本质是 function，同样可以看成一个块
+      1. 类定义：（主要是要注意到类里面构造器很特殊）
+     // 匿名类
+           let Demo = class {
+             constructor(a) {
+                 this.a = a;
+             }
+
+          / 命名类
+          let Demo = class Demo {
+             constructor(a) {
+                 this.a = a;
+             }
+     2.类的主体  property 类的显示原型，所有声明出来的对象都能访问
+        这里也会涉及到继承问题，
+        扩展一下：ES6之前没有给我们提供 extends 继承。我们可以通过构造函数+原型对象的模式去模拟实现继承。这种方法也被称为组合继承。
+        1. 使用call()方法实现继承：
+            优点：继承了父类构造函数中所有的属性和方法
+            缺点：不能继承父类原型对象中的属性和方法
+        2. 使用prototype实现继承
+            优点：继承了父级原型上的属性和方法
+            缺点：实现化多个子类时，必须使用共同的属性值。
+        3. 组合式继承
+             <script>
+        function Dog(age){
+            this.age = age;
+        }
+        Dog.prototype.bark = function(){
+            alert("汪汪汪！")
+        }
+        function Huskie(name,age){
+            Dog.call(this,age);
+            this.name = name;
+        }
+        Huskie.prototype = new Dog();//哈士奇构造函数 . 原型对象  =   Dog构造函数
+
+        Huskie.prototype.constructor = Huskie;//哈士奇构造函数 . 原型对象 . 构造函数 =   哈士奇构造函数
+
+        var h = new Huskie("二哈",5);
+        console.log(h.age);
+        h.bark();
+
+        </script>
+         call()方法优点：继承了父类构造函数中所有的属性和方法
+          prototype继承优点：继承了父级原型上的属性和方法
+
+
+  六. Map
+      1. Map和Objects的区别
+         map中的键值对中的键可以是任意类型，Objects中的key只能是"String"或者是“symbols”
+         Map中的键值是有序的，而添加到对象objects的键则不是的
+         Map的健值对个数可以从size属性获取，Objec只能手动获取
+      2. Map的迭代
+         可以使用foreach 迭代，但是没有返回值，一般适用于对数据库中数据写去，适用于不修改数据的操作
+         其中map()方法是有一个返回值的，这个值是个数组。从而foreach（）和map（）两者的应用场景是不一样
+          let myMap={}
+          myMap.set(0,"zero")
+          myMap.set(1,"one")
+          myMap.get(0)
+          myMap.foreach(function(key,value){console.log(key+value)},myMap)
+
+      3.Map与Array转换
+        1. 二维形式的二元数组可以转换成Map形式，两者能互相转换
+        2.互转的函数表达
+          letkvArray = [["key1", "value1"], ["key2", "value2"]];
+          // Map 构造函数可以将一个 二维 键值对数组转换成一个 Map 对象
+          let myMap = new Map(kvArray);
+          // 使用 Array.from 函数可以将一个 Map 对象转换成一个二维键值对数组
+          let outArray = Array.from(myMap);
+
+-->

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 思路：从两边向中间移动，一个end，一个start
+    // 1.结束递归条件
+    /*
+    * 1.结束递归条件
+    * 2.记录最左边和最右边的值,以及每次开始的begin值
+    * 3.然后边开始移动，左边开始，右边先移动，右边开始，左边移动
+    * 4. 移动结束的判断条件、什么时候该换值（填坑）
+    * 5. 再递归执行两边
+    *  时间复杂度： 最好 logn  最坏n2 平均nlogn   空间复杂度logn
+    * */
+
+    let arr=[5,9,8,2,6,10,15]
+    function quickSort(arr,begin,end){
+        if(begin>=end){
+            return arr;
+        }
+        let left=begin,
+            right=end,
+            key=arr[begin];
+        while(begin<end){
+            //以数列左边开始，右边就先移动
+            while(arr[end]>=key && begin<end){
+                end--;
+            }
+            // 结束循环就是右边移动的时候找到了一个比key值大的元素
+            arr[begin]=arr[end];
+            while(arr[begin]<=key && begin<end){
+                begin++;
+            }
+            arr[end]=arr[begin]
+        }
+        arr[begin]=key;
+        let target=begin
+        quickSort(arr,left,target-1)
+        quickSort(arr,target+1,right)
+        return arr
+    }
+    console.log(quickSort(arr,0,arr.length-1))
+  /*
+  *快速排序的空间复杂度取决于递归的深度，所以最好的时候为 O(logn)，最坏的时候为 O(n)。
+  *快速排序的平均时间复杂度为 O(nlogn) ，最坏时间复杂度为 O(n²) ，空间复杂度为 O(logn)
+  * 不是稳定排序。
+  *
+  * */
+</script>
+</body>
+</html>

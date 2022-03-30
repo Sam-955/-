@@ -1,0 +1,274 @@
+
+body{
+    background-color: #f7f7f8;
+}
+/* 滑动部分*/
+.main{
+/*  由于最下面的部分不给覆盖，所以需要对最下面留出padding*/
+    margin:12px 11px 80px;
+    /*background-color: #ffffff;*/
+    border-radius: 5px;
+    /*background-color: skyblue;*/
+}
+/*地址信息*/
+.main .addresMessage{
+    display: flex;
+    align-items: center;
+    padding: 10px 0px 10px 10px;
+    margin-bottom: 10px;
+    background-color: #ffffff;
+    border-radius: 10px;
+    /*height:85px ;*/
+
+    /*justify-content: center;*/
+    /*align-items: center;*/
+}
+.main .addresMessage .icon-map-image{
+    width: 30px;
+    height: 30px;
+    margin-right: 10px;
+    /*margin-left: ;*/
+    background-color:  #55b297;
+    border-radius: 50%;
+    color: #ffffff;
+    text-align: center;
+    line-height: 30px;
+}
+.main .addresMessage .info{
+   flex: 1;
+    line-height: 28px;
+}
+.main .addresMessage .icon-more1{
+    width: 44px;
+    height: 44px;
+    background-color: #dff8ff;
+    text-align: center;
+    line-height:44px;
+    color:#808080;
+}
+.main .addresMessage .icon-more1:hover{
+    color: #dff8ff;
+}
+    /* 订单信息*/
+.order-info {
+    /*height:107px ;*/
+    padding:11px 11px 11px 11px;
+    background-color: #fff;
+    border-radius: 10px;
+}
+.order-info a{
+    display: flex;
+    justify-content: center;
+    /*align-items: center;*/
+}
+.order-info img{
+    width: 85px;
+    height: 85px;
+    margin-right: 10px;
+}
+.order-info .goods-info{
+    height:85px ;
+    flex: 1;
+}
+.order-info .goods-info .goods-content{
+font-size: 13px;
+    color: #262626;
+}
+.order-info .goods-info .goods-param{
+    /*box-sizing: border-box;*/
+    margin-top:2px ;
+    /*padding: 2px;*/
+    /*margin:2px;*/
+    width: 95px;
+    padding-left: 2px;
+    height: 18px;
+    color: #888888;
+    background-color: #f7f7f8;
+    border-radius: 3px;
+    font-size: 10px;
+    font-weight: 400;
+    line-height: 16px;
+
+}
+.order-info .goods-info .price{
+   display: flex;
+    height: 35px;
+    line-height: 35px;
+}
+.order-info .goods-info .current-price{
+    display: flex;
+    color:#cf4444 ;
+    font-size:16px ;
+}
+.order-info .goods-info .current-price i{
+    font-size: 10px;
+    vertical-align: middle;
+}
+.order-info .goods-info .cost-price{
+    display: flex;
+    color: #999999;
+    margin-left: 13px;
+    font-size: 12px;
+    text-decoration-line: line-through;
+}
+.order-info .goods-info .cost-price i{
+    height: 8px;
+    font-size: 9px;
+    padding-top: 1px;
+}
+.order-info .order-info .count{
+    /*display: flex;*/
+    /*justify-content: center;*/
+    width: 30px;
+    height: 25px;
+    margin-top: 17px;
+    font-size: 15px;
+     color: #262626;
+}
+    /*订单配送 备注 支付 等*/
+.other{
+    font-size: 10px;
+    margin-top: 10px;
+    padding:12px 10px 16px 13px;
+    background-color: #ffff;
+    border-radius: 10px;
+}
+.other .sort{
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-direction: column;
+    /*justify-content: space-between;*/
+
+
+}
+.other .sort li:nth-child(1) {
+    margin-bottom: 20px;
+    background-color: red;
+    height:15px;
+    width: 100%;
+}
+.other .sort li:nth-child(2) {
+    margin-bottom: 20px;
+    background-color: greenyellow;
+    height:15px;
+    width: 100%;
+}
+.other .sort li:nth-child(3) {
+    background-color: silver;
+    height:15px;
+    width: 100%;
+}
+/* 总价结算*/
+.sum-price{
+    font-size: 10px;
+    margin-top: 10px;
+    padding:12px 10px 16px 13px;
+    background-color: #ffff;
+    border-radius: 10px;
+}
+.sum-price .sort{
+    display: flex;
+    /*justify-content: space-between;*/
+    flex-direction: column;
+    /*justify-content: space-between;*/
+
+
+}
+.sum-price .sort li:nth-child(1) {
+    margin-bottom: 20px;
+    background-color: red;
+    height:15px;
+    width: 100%;
+}
+.sum-price .sort li:nth-child(2) {
+    margin-bottom: 20px;
+    background-color: greenyellow;
+    height:15px;
+    width: 100%;
+}
+.sum-price .sort li:nth-child(3) {
+    background-color: silver;
+    height:15px;
+    width: 100%;
+}
+
+    /*固定部分*/
+.fix{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    /*如果这里我不给宽和高的话，那么会脱标，高宽有内容决定*/
+    width:100%;
+    height:79px;
+    border-bottom: 1px solid #ededed;
+/*    ps*/
+/*    background-color: pink;*/
+    display: flex;
+    /*水平间距*/
+    justify-content: space-between;
+    /*垂直居中*/
+    align-items: center;
+    background-color:#ffffff ;
+
+/*    不同点*/
+    padding: 10px 10px 0 20px;
+    /*opacity: 0.8;*/
+}
+.fix .sum{
+    display: flex;
+
+    /* */
+    /*align-items: center;*/
+    line-height: 50px;
+}
+.fix .sum p{
+
+    /*width: 29px;*/
+    /*height: 12px;*/
+    /*margin:28px 12px 40px 20px ;*/
+    font-size: 12px;
+    /*font-weight: 700;*/
+/*    不同点*/
+    margin-right: 10px;
+    color: #1e1e1e;
+}
+.fix .sum div{
+    display: flex;
+    color: #cf4444;
+}
+.fix .sum span:first-child{
+    font-size:10px ;
+}
+
+
+
+/*.fix .pay{*/
+/*    display: flex;*/
+/*    width: 91px;*/
+/*    height: 35px;*/
+/*    background-image: linear-gradient(90deg, #6fc2aa 5%, #54b196 100%);*/
+
+/*    !*background-color: #6fc2aa;*!*/
+/*    justify-content: center;*/
+/*    align-items: center;*/
+/*    border-radius:3px ;*/
+/*    color: #ededed;*/
+
+/*}*/
+/*fix .pay a{*/
+/*    width: 91px;*/
+/*    height: 35px;*/
+/*    color: #fff;*/
+/*}*/
+
+.fix a{
+    display: block;
+    width: 91px;
+    height: 35px;
+    background-image: linear-gradient(90deg, #6fc2aa 5%, #54b196 100%);
+    border-radius: 3px;
+    text-align: center;
+    line-height: 35px;
+    color: #fff;
+    font-size: 13px;
+}

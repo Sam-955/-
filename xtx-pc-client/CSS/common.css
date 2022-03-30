@@ -1,0 +1,192 @@
+.contianer{
+    width: 1240px;
+    margin: 0 auto;
+}
+/* ---------------快捷菜单模块：xtx-shortcut */
+.xtx-shortcut{
+    height: 52px;
+    background-color: black;
+}
+.xtx-shortcut .contianer{
+    height: 52px;
+    /*background-color: pink;*/
+
+}
+
+.xtx-shortcut ul li{
+    float: left;
+    line-height: 52px;
+    color: #666666;
+}
+.xtx-shortcut ul li a {
+    margin: 0 16px;
+    color: #dcdcdc;
+    font-size: 14px;
+}
+.xtx-shortcut li:last-child a {
+    margin-right: 0;
+}
+.xtx-shortcut ul li:last-child a::before{
+    content:"";
+    display: inline-block;
+    width: 11px;
+    height:16px ;
+    vertical-align: middle;
+    /*background-color: red;*/
+    background: url("../images/sprites.png") -160px -70px ;
+    margin-top:-3px;
+    margin-right: 8px;
+}
+
+/* -------------主导航模块：xtx-main-nav */
+.xtx-main-nav{
+    height:130px;
+    padding-top:30px;
+    box-sizing: border-box;
+    /*---ps---*/
+    /*background-color: pink;*/
+}
+.xtx-main-nav .logo{
+    width: 207px;
+    height: 70px;
+    margin-left: 25px;
+    /* PS */
+    /*background-color: blue;*/
+}
+.xtx-main-nav .logo a{
+    display:block;
+    height: 70px;
+    background: url("../images/logo.png");
+    background-size: 100% 100%;
+    font-size: 0;
+}
+/* -------------主导航模块：xtx-main-li-- */
+.xtx-main-nav nav{
+    /* ps */
+    /*background-color: blue;*/
+    margin-left: 40px;
+}
+.xtx-main-nav nav li{
+    float: left;
+    height: 70px;
+    line-height: 70px;
+    margin-right: 48px;
+    /*font-family: PingFangSC-Regular;*/
+
+
+}
+.xtx-main-nav nav a:hover{
+    color:#27ba9b;
+    border-bottom: 1px solid #27ba9b;
+    padding-bottom: 7px;
+}
+.xtx-main-nav .search{
+    position: relative;
+    width: 172px;
+    height: 30px;
+    margin-top: 24px;
+    margin-left: 34px;
+/*    ps  */
+/*    background-color:red;*/
+}
+.xtx-main-nav .search::before{
+    position: absolute;
+    content: "";
+    top:5px;
+    left: 2px;
+    width: 18px;
+    height:18px;
+    /* ps*/
+    /*background-color: red;*/
+    background: url('../images/sprites.png') -80px -70px;
+}
+.xtx-main-nav .search input{
+    width: 172px;
+    height: 30px;
+    border-bottom: 2px solid #e7e7e7;
+    padding-left:31px;
+}
+.xtx-main-nav  .cart{
+    position: relative;
+    width: 23px;
+    height: 23px;
+    margin-top: 28px;
+    margin-left: 15px;
+
+    background: url('../images/sprites.png') -120px -70px;
+    /*    ps  */
+    /*background-color: red;  */
+}
+.xtx-main-nav  .cart span{
+    position: absolute;
+    right: -12px;
+    top: -5px;
+    width: 20px;
+    height: 15px;
+    background-color: red;
+    border-radius: 8px;
+    color:white;
+    font-size: 13px;
+    text-align: center;
+    line-height: 15px;
+
+
+
+}
+
+/*  底部服务模块：*/
+.xtx-service{
+    height: 174px;
+    background-color: #333333;
+}
+.xtx-service .container{
+    width:1393px;
+    height:173px;
+    border-bottom:1px solid #434343;
+/*    ps*/
+/*    background-color: pink;*/
+}
+.xtx-service .container a {
+    float: left;
+    width: 33.3%;
+    height:173px ;
+    text-align: center;
+    line-height: 173px;
+    font-size: 28px;
+    color: #fff;
+}
+
+.xtx-service .container a::before{
+    content: "";
+    display: inline-block;
+    width: 58px;
+    height: 58px;
+    background: url('../images/sprites.png') 0 0;
+    vertical-align: middle;
+}
+.xtx-service .container a:nth-child(2)::before{
+    background-position: -130px 0;
+}
+.xtx-service .container a:nth-child(3)::before{
+    background-position: -65px 0;
+}
+
+/*版权信息*/
+.xtx-copyright{
+    height: 168px;
+    background-color: #333333;
+}
+.xtx-copyright .container{
+    height: 168px;
+    padding-top: 41px;
+    box-sizing: border-box;
+    text-align: center;
+    font-size: 14px;
+    color: #999;
+}
+.xtx-copyright .container a{
+    color: #999;
+}
+.xtx-copyright .container .p{
+    margin-bottom: 20px;
+}

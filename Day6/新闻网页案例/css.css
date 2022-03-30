@@ -1,0 +1,16 @@
+h1{
+    font-size: 2em;
+    text-align: center;
+}
+#span{
+    font-size: 1em;
+    margin: 0 auto;
+
+}
+.span1{
+    color: skyblue;
+    margin: 0 auto;
+}
+p{
+    text-indent: 2em;
+}

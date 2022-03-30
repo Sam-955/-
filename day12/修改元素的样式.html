@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    <title>Document</title>
+    <style>
+        div {
+            width: 200px;
+            height: 200px;
+            background-color: pink;
+        }
+    </style>
+</head>
+
+<body>
+<div>122</div>
+<input type="text" value="hello">
+<button type="submit">提交</button>
+
+<script>
+    // 获取元素
+    var  input= document.querySelector('input')
+    console.log(input.value)
+    var div= document.querySelector('div') // 选择第一个div类
+
+    console.log(div.value)
+//    注册事件 div.onclick
+//    运行程序
+    div.onclick=function (){
+        this.style.backgroundColor='orange'
+        this.style.width='20px'
+        this.style.borderRadius="6px"
+    }
+
+
+
+
+</script>
+</body>
+
+</html>

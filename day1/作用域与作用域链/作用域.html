@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <script>
+        var str = '全局变量';
+        function func(){
+            console.log(str+1);
+            function childFn(){
+                console.log(str+2);
+                function fn(){
+                    console.log(str+3);
+                };
+                fn();
+            };
+            childFn();
+        }
+        func();
+        console.log(str)
+    </script>
+</head>
+
+<body>
+
+</body>
+
+</html>

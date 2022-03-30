@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>测试JS的执行顺序</title>
+    <script type="text/javascript">
+        alert("最先执行");
+    </script>
+    <script type="text/javascript" src="temp.js"  charset="UTF-8"></script>
+</head>
+
+<body οnlοad="alert('最后执行');">
+<script type="text/javascript">
+    alert("中间执行1");
+</script>
+测试JS的执行顺序
+<script type="text/javascript">
+    alert("中间执行2");
+</script>
+</body>
+
+</html>
+
+<!--先执行head 头标签里面的内容，然后再执行 body里面的内容（里面的内容按顺序执行），然后再执行 body标签上的内容-->

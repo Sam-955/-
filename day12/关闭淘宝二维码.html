@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            position: relative;
+            width: 200px;
+            height: 200px;
+            background-image: url("./images/tao.png");
+            background-size: cover;
+            margin: 50px auto;
+        }
+        .box .del{
+            position: absolute;
+            top:-15px;
+            left:-15px;
+            width: 15px;
+            height: 15px;
+            background-image: url(./images/wrong.png);
+            background-color: darkgrey;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body>
+<div class="box">
+    <div class="del"></div>
+</div>
+<script>
+  // 获得元素 确定事件源
+  var del =document.querySelector('.del')
+  var tao = document.querySelector('.box')
+
+  // 绑定事件源 del.onclick
+  del.onclick=function (){
+     this.style.display='none'
+      tao.style.display='none'
+  }
+
+</script>
+</body>
+</html>

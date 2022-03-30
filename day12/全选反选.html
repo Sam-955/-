@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0;
+            padding: 0;
+        }
+        .box{
+            width: 300px;
+            margin: 100px auto ;}
+        table{
+            border-collapse: collapse;
+            /*border-spacing: 0;*/
+            border: 1px solid #c0c0c0;
+            width: 300px;
+        }
+        th ,td {
+            border: 1px solid #d0d0d0;
+            color: #404060;
+            padding: 10px;
+            text-align: center;
+        }
+        td{
+            font: 14px "微软雅黑";
+        }
+        tbody tr:hover {
+            cursor: pointer;
+            background-color: rgba(50,50,50,.2);
+
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+    <table>
+        <thead>
+        <tr>
+            <th>
+                <input type="checkbox" id="j_cbAll" />
+            </th>
+            <th>商品</th>
+            <th>价钱</th>
+        </tr>
+
+        </thead>
+        <tbody id="j_tb">
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>iPhone8</td>
+                <td>8000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" class="1" />
+                </td>
+                <td>iPad Pro</td>
+                <td>5000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>iPad Air</td>
+                <td>2000</td>
+            </tr>
+            <tr>
+                <td>
+                    <input type="checkbox" />
+                </td>
+                <td>Apple Watch</td>
+                <td>2000</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+<script>
+    var j_cbAll=document.getElementById('j_cbAll')
+    // var j_tbs=document.getElementById("j_tb").getElementsByTagName('input')
+    var j_tbs=document.getElementById("j_tb").querySelectorAll('input')
+    console.log(j_tbs)
+    j_cbAll.onclick=function (){
+        for(var i in j_tbs){
+            j_tbs[i].checked=this.checked
+        }
+    }
+    for(var i in j_tbs){
+        j_tbs[i].onclick=function (){
+            var tag=true;
+            for(var j=0;j<j_tbs.length;j++){
+                if (!j_tbs[j].checked){
+                    tag=false;
+                    break;
+                }
+            }
+            j_cbAll.checked=tag;
+        }
+    }
+
+
+</script>
+</body>
+</html>

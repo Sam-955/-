@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var txt="Hello World";
+    document.write("<p>Big:"+txt.big()+"</p>");
+    document.write("<p>Small:"+txt.small()+"</p>");
+    document.write("<p>Bold:"+txt.bold()+"</p>");
+    document.write("<p>Blink:"+txt.blink()+"</p>");
+    document.write("<p>Italic:"+txt.italics()+"</p>");
+    document.write("<p>Sub:"+txt.sub()+"</p>");
+    document.write("<p>Sup:"+txt.sup()+"</p>");
+    document.write("<p>FontColor:"+txt.fontcolor("Red")+"</p>");
+    document.write("<p>FontSize:"+txt.fontsize(16)+"</p>");
+    document.write("<p>toLowerCase:"+txt.toLowerCase()+"</p>");
+    document.write("<p>toUpperCase:"+txt.toUpperCase()+"</p>");
+
+    document.write("<p>CharAt:"+txt.split('')+"</p>");
+    document.write("<p>CharCodeAt:"+txt.charCodeAt(2)+"</p>");
+    document.write("<p>IndexOf:"+txt.indexOf("World")+"</p>");
+    document.write("<p>IndexOf:"+txt.indexOf("worlld")+"</p>");
+    document.write("<p>LastIndexOf:"+txt.lastIndexOf("Hello")+"</p>");
+    document.write("<p>match:"+txt.match("Hello")+"</p>");
+    document.write("<p>match:"+txt.match("Helelo")+"</p>");
+    document.write("<p>Concat:"+txt.concat("rose rose")+"</p>");
+    document.write("<p>Replace:"+txt.replace(/World/,"yesterday")+"</p>");
+    document.write("<p>Split:"+txt.split(' ')+"</p>");
+   </script>
+</body>
+</html>
+<!--
+（1）js的放置位置：既可以放在<head><script>...</script></head>，也可以放在<body><script>...</script></body>部分。
+    放在head部分是页面载入时脚本同时也载入了，而body部分是调用脚本时才载入。还可以将js写入一个外部文件中，此文件必须以.js后缀保存。
+    然后把 .js 文件指定给 <script> 标签中的 "src" 属性，就可以使用这个外部文件了：
+-->

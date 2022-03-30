@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    // 堆排序的时空复杂度分别为 nlogn  1
+    // 堆排序中的堆是一颗父元素大于子元素的二叉树
+    // 将这个二叉树表示在数组中，是按层次遍历,这样就有个规律是
+    // 父节点索引*2+1=左子树，父节点*2+2=右子树，如果没有那么当前节点就是叶子节点
+    //  很关键一点：iParent = parseInt(length >> 1) - 1; // 获取最后一个非叶子点的元素
+function heapSort(arr){
+    if (!Array.isArray(arr) || length <= 1) return;
+    buildHeap(arr);
+    // 打顶堆调整完毕以后就将最后一个元素与堆定元素调换位置
+    for(let i=arr.length-1;i>=0;i--){
+        swap(arr,0,i) // 将最后一个元素和堆顶元素调换位置
+        adjustHeap(arr,0,i) // 调换位置以后，最后一个元素不再堆的调整
+    }
+    return arr
+}
+// 这里的调整是调整 父节点与子节点的大小位置，最终目的是选出 父节点和左右节点 三个中最大的哪个，将其放在父元素上
+function adjustHeap(arr,parentNode_index,arr_length){
+    // 拿到父节点的索引后，就需要求出左右子树的索引号
+    let left =parentNode_index*2+1,
+        right=parentNode_index*2+2,
+        max_index=parentNode_index;// max_index  保存三者间最大的索引号
+        if(left<arr_length && arr[left]>arr[max]){ max_index=left};
+        if(left<arr_length && arr[right]>arr[max]){max_index=right};
+        if(max_index !==parentNode_index) {
+            swap(arr,max_index,parentNode_index)
+        } else {
+            return
+        };
+
+    // return arr  由于传递的是数组名，所以操作是直接在原数组上进行，所以不需要进行返回
+}
+
+function buildHeap(arr){
+    last_parent_node_index=parseInt(arr.length>>1-1)
+    // 开始通过每一个父元素来调整他们与左右子树的大小关系来达到一个  父节点值大于左右子节点的值
+    // 遍历每一个父节点，这就包括了根节点
+    for(var i=last_parent_node_index;i>=0;i--){
+        adjustHeap(arr,i,arr.length)
+    }
+}
+function swap(arr,Max_index,parent_Node_index){
+     let temp=arr[Max_index];
+     arr[Max_index]=arr[parent_Node_index]
+    arr[parent_Node_index]=temp
+    return arr
+}
+
+    let arr=[5,9,8,2,6,10,15]
+    console.log(heapSort(arr))
+</script>
+</body>
+</html>

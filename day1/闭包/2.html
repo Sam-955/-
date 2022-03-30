@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    function outerFn(){
+        var i = 0;
+        function innerFn(){
+            i++;
+            console.log(i);
+        }
+        return innerFn;
+    }
+    var inner = outerFn();  //每次外部函数执行的时候,都会开辟一块内存空间,外部函数的地址不同，都会重新创建一个新的地址
+    inner();
+    inner();
+    inner();
+    var inner2 = outerFn();
+    inner2();
+    inner2();
+    inner2();   //1 2 3 1 2 3
+</script>
+</body>
+</html>

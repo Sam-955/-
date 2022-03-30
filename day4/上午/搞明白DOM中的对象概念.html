@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>JQuery练习</title>
+</head>
+<body>
+<script type="text/javascript" src="JQuery练习/jquery-3.3.1.min.js"></script>
+<p id="demo" style="font-size: large ; color: #5bc0de">这是一个文本框</p>
+<a href="https://blog.csdn.net/bbzz100/article/details/4678555?ops_request_misc=&request_id=&biz_id=102&utm_term=js%20html%20dom%E4%B8%AD%E7%9A%84%E5%AF%B9%E8%B1%A1%E7%90%86%E8%A7%A3&utm_medium=distribute.pc_search_result.none-task-blog-2~blog~sobaiduweb~default-1-4678555.nonecase&spm=1018.2226.3001.4450">链接</a>
+<p id="demo2" style="font-size: large ; color: #5bc0de">这是一个文本框</p>
+<button onclick="hide()">点击隐藏</button><br>
+<button onclick="show()">点击展现</button>
+<script>
+  function hide(){
+    $("#demo").hide();
+  }
+  function show(){
+    $("demo").show();
+  }
+  var anchortag=document.getElementsByTagName("body");
+  for(var i=0;i<anchortag.length;i++){
+    undefined
+    alert("p of this a elments is :" +anchortag[i]+"/n")
+    confirm("确认吗")
+    prompt("提示框")
+  }
+  var x
+  var mybook = new Array()
+  mybook[0]="组合数学"
+  mybook[1]="数据挖掘"
+  mybook[2]="分布式数据库"
+  for(x in mybook)
+  {undefined
+    document.write(mybook[x]+"<br/>")
+  }
+
+</script>
+
+</body>
+</html>
+<!--
+dom 中的对象
+ String：
+big()	用大号字体显示字符串
+small()	用小号字体显示字符串
+bold()	用粗体显示字符串
+blink()	在IE浏览器下用闪烁字体显示字符串
+italics()	用斜体显示字符串
+strike()	用删除线来显示字符串
+sub()	把字符串显示为下标
+sup()	把字符串显示为上标
+toLowerCase()	把字符串转化为小写
+toUpperCase()	把字符串转化为大写
+fontcolor()	使用指定的颜色来显示字符串
+fontsize()	使用指定的大小来显示字符串
+link()	将字符串显示为链接
+charAt()	返回指定位置的字符
+charCodeAt()	返回指定位置字符的Unicode编码
+indexOf()	检索字符串
+lastIndexOf()	从后向前搜索字符串
+match()	找到一个或多个表达式的匹配
+concat()	链接字符串
+replace()	替换与正则表达式匹配的字符串
+split()	把字符串分割为字符串数组
+substr()	截取从起始字符串开始到指定位置的字符串
+subString()	截取指定起始位置的字符串
+toString()	valueOf()
+————————————————
+Date：
+Date()	返回当日的日期和时间
+getDate()	从Date对象返回一个月中的某一天（1-31）
+getDay()	从Date对象返回一周中的某一天（0-6）
+getMonth()	从Date对象返回月份（0-11）
+getFullYear()	从Date对象以四位数字返回年份
+getHours()	返回Date对象的小时（0-23）
+getMinutes()	返回Date对象的分钟（0-59）
+getSeconds()	返回Date对象的秒数（0-59）
+getMilliSecond()	返回Date对象的毫秒数（0-999）
+getTime()	返回从1970年1月1日至今的毫秒数
+setDate()	设置Date对象中的某一天（1-31）
+setMonth()	设置Date对象的月份（0-11）
+setFullYear()	设置Date对象的年份
+setHourse()	设置Date对象的小时（0-23）
+setMinutes()	设置Date对象的分钟（0-59）
+setSeconds()	设置Date对象的秒数（0-59）
+setMilliSeconds()	设置Date对象的毫秒数（0-999）
+setTime()	以毫秒设置Date对象
+toString()	把Date转成字符串
+toTimeString()	把Date的时间部分转成字符串
+toDateString()	把Date的日期部门转成字符串
+————————————————
+   Array
+   1. concat()方法用于连接两个或多个数组，该方法不会改变现有数组，只是返回被连接数组的一个副本。
+   2. arrayObject.join(separator)方法用于把数组中所有的元素放入一个字符串。元素是通过分隔符分隔的。
+   3. arrayObject.sort(sortby)方法用于对数组元素进行排序，默认是按字母的顺序进行排序。sortby是可选的，必须是规定排序顺序的函数
+   4. arrayObject.pop()方法用于删除并返回数组的最后一个元素。如果数组的为空，则pop()不改变数组，并返回undefine值
+   5. arrayObject.push(newelments...)方法可向数组的末端添加一个或多个元素，并返回新的大长度。
+   6. arrayObject.reverse()方法用于颠倒数组中元素的顺序。
+   7. arrayObject.shift()方法用于把数组的第一个元素删除，并返回第一个元素的值。
+   8. arrayObject.splice(index，howmany,elements...)方法用于插入、删除或替换数组的元素。
+   9. arrayOject.slice(start,end)方法可以从已有数组中返回选定的元素。
+
+  Boolean
+
+  Math:只是函数方法，直接调用
+          Math.sqrt(15)开方
+          round()方法把一个数字舍入最接近的整数，即四舍五入；
+          ceil()方法对一个数进行向上取整
+          floor()方法对一个数进行向下取整。
+          random()方法可返回介于0-1之间的一个随机数
+          max(x,y...)方法可返回多个数中最大的那个数值
+
+  RegExp：
+     1. 创建RegExp对象：var patt=new RegExp(pattern,attributes);
+     2. test()方法：用于检测一个字符串是否匹配某个模式，有匹配返回True,否则false。
+        RegExpObject.test(string str);
+     3. exec()方法：用于检索字符串中的正则表达式的匹配，返回一个数组，其中存放匹配的结果。如果没有找到匹配，返回null.
+        RegExpObject.exec(string str);
+     4. compile()方法：用于编译或改变重新编译正则表达式。
+        RegExpObject.compile(regexp,modifier);
+     5. 支持正则表达式的String方法
+        1. search()方法
+           stringObject.search(regexp)  返回stringObject中第一个与regexp相匹配的子串的起始位置。
+           如果没有找到则返回-1.
+        2. match()方法 在字符串内检索指定的值，或找到一个或多个正则表达式的匹配。
+           stringObject.match(string searchvalue);
+           stringObject.match(regexp);
+           返回存放匹配结果的数组。
+        3. stringObject.repalce(regexp/substr,replacement)方法：
+           用于在字符串中用一些字符替换另一些字符，或者替换一个与正则表达式匹配的子串。
+
+-->

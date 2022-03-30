@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        *{
+            margin: 0;
+            padding:0;
+
+        }
+        div{
+            width: 400px;
+            height: 400px;
+        }
+
+        .red{
+            background-color: red;
+        }
+
+        .green{
+            /*visibility: hidden;  隐藏后占位置*/
+            /*display: none;   不占位置*/
+            background-color: green;
+        }
+        .blue{
+            background-color: blue;
+        }
+
+        .father {
+            width: 400px;
+            height: 400px;
+            background-color: pink;
+        }
+        .son {
+            width: 100px;
+            height: 100px;
+            background-color: blue;
+            /* 默认隐藏 */
+            display: none;
+        }
+
+        .father:hover .son {
+            /* hove到father后让son元素显示 */
+            display: block;
+        }
+    </style>
+</head>
+<body>
+<div class="red"></div>
+<div class="green"></div>
+<div class="blue"></div>
+<div class="father">
+    <div class="son"></div>
+</div>
+</body>
+</html>

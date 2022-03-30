@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+<!--  选择排序-->
+// 在右边无序区选择一个最大或者最小的放到有序区
+let arr=[5,9,8,2,6,10,15]
+
+console.log(arr)
+for (let i=0;i<arr.length-1;i++){
+     let index_min=i;// 设置最小索引
+     for(let j=i+1;j<arr.length;j++){
+        if(arr[index_min]>arr[j]){
+          index_min=j
+        }
+     }
+     swap(index_min,i,arr)
+}
+function swap(index_min,i,arr){
+    var temp=arr[i];
+    arr[i]=arr[index_min]
+    arr[index_min]=temp
+}
+//杂度为 O(n²) ，最坏时间复杂度为 O(n²) ，空间复杂度为 O(1) ，不是稳定排序
+</script>
+</body>
+</html>

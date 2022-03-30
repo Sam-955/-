@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .box{
+            height: 50px;
+            width: 100px;
+            margin: 0 auto;
+        }
+      .box div{
+        background:linear-gradient(white,grey);
+        opacity: 0.6;
+        font-size: 16px;
+          border-radius: 4px;
+      }
+      button{
+          background-color: skyblue;
+          font-size: 12px;
+          color: white;
+      }
+    </style>
+</head>
+<body>
+<div class="box">
+  <div >显示时间</div>
+  <button id="botton">点击刷新当前系统时间</button>
+    <script>
+<!--      选中事件源 获取元素-->
+        var showTime= document.getElementsByTagName('div');
+        var freshCilck=document.getElementById('botton');
+    //注册事件（事件绑定）  freshCilck.onclick
+    //事件执行程序
+    freshCilck.onclick=function (){
+         showTime[0].innerHTML=getDate();// innerHTML 这里修改元素内容
+    }
+    function getDate(){
+       var nowTime=new Date();
+       var year=nowTime.getFullYear();
+       var month=nowTime.getMonth();
+       var tian=nowTime.getDate()
+       var day =nowTime.getDay();
+        var arr = ['星期日', '星期一', '星期二', '星期三', '星期四', '星期五', '星期六']
+        var hours=nowTime.getHours();
+        var minutes=nowTime.getMinutes();
+        var seconds=nowTime.getSeconds();
+        if (hours<10){
+            hours="0"+hours
+        }
+        return "今天是："+year+"年"+month+"月"+tian+"日"+arr[day]+hours+"时"+minutes+"分";
+    }
+    </script>
+</div>
+
+
+</body>
+</html>

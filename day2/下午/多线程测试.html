@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<input type="text" placeholder="数值" id="number">
+<button id="btn" style="align-content: center;font-size: 10px ">计算</button>
+<script type="text/javascript">
+        var input = document.getElementById('number')
+        document.getElementById("btn").onclick=function (){
+        var number=input.value
+        // 声明一个线程，创建一个worker对象
+        var worker = new Worker("muilt-process.js")
+
+        worker.postMessage(number)
+            alert("'主线程向分线程发送数据：'+number")
+        console.log('主线程向分线程发送数据：'+number)
+        // 绑定接受消息的监听
+        worker.onmessage=function (event){
+            console.log('主线程接收分线程返回的数据：'+event.data)
+            alert(event.data)  // alert 是window 方法，分线程不能调用
+        }
+
+    }
+
+</script>
+</body>
+</html>
+<!--
+var worker= new Woker(需要多线程执行的代码块的js文件地址)
+worker.onmessage=function(event){
+console.long(even.data)}
+向worker发送数据
+worker.postMessage("hello world")
+
+
+var onmessage=function(event){ // 不能用函数声明
+     console.log('onMessage()22')
+     var upper=event.datatoUpperCase() // 通过event.data获得发送来的数据
+     postMessage(upper)// 将获取到的数据发送到主线程
+}
+-->

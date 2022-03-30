@@ -1,0 +1,96 @@
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+<!--    写一个宽度自适应设备-->
+    <meta name="viewport" content="width=decive-width initail-scale=1.0">
+    <title>填写订单</title>
+    <link rel="stylesheet" href="./lib/iconfont/iconfont.css">
+    <link rel="stylesheet" href="./css/base.css">
+    <link rel="stylesheet" href="./css/orders.css">
+</head>
+<body>
+<!--整个盒子是由两个部分组成
+一部分是上面滑动的，一部分是下面固定的
+-->
+<!--滑动页面-->
+<div class="main">
+<!--    地址信息-->
+    <div class="addresMessage">
+        <div class="icon-map-image">
+            <i class="iconfont icon-location"></i>
+        </div>
+        <div class="info">
+            <div class="user-info">
+                <div class="use-name">林丽</div>
+                <div class="use-phone">18500667882</div>
+            </div>
+            <div class="use-addrees">北京市  海淀区  中关村软件园   信息科技大厦1号
+                楼410#   </div>
+        </div>
+        <div class="icon-more1">
+            <a class="iconfont icon-more" href="#"></a>
+        </div>
+
+    </div>
+<!--  订单信息  -->
+    <div class="order-info .clearfix">
+        <a>
+        <img src="./uploads/pic.png">
+        <div class="goods-info">
+            <h4 class="goods-content">康尔贝 非接触式红外体温仪
+                领券立减30元 婴儿级材质 测温…</h4>
+            <h5 class="goods-param">粉色   红外体温计</h5>
+            <div class="price">
+                <div class="current-price">
+                    <i>¥</i>
+                    <span>266</span>
+                </div>
+                <div class="cost-price">
+                    <i>¥</i>
+                    <span>299</span>
+                </div>
+            </div>
+        </div>
+        <div class="count">
+                <i class="iconfont icon-x"></i>
+                <span>1</span>
+        </div>
+        </a>
+    </div>
+    <div class="other">
+        <ul class="sort">
+            <li>配送方式<span>顺丰快递</span></li>
+            <li>买家备注<span>希望可以尽快发货</span></li>
+            <li class="icon-pay">支付方式
+               <span>支付宝<i class="iconfont "></i></span>
+            </li>
+        </ul>
+    </div>
+    <div class="sum-price">
+        <ul class="sort">
+            <li>商品总价<span>￥299.00</span></li>
+            <li>运费<span>￥0.00</span></li>
+            <li >折扣
+                <span>-￥30.0000000000000000000000000000000</span>
+            </li>
+        </ul>
+    </div>
+</div>
+<!--固定页面-->
+<div class="fix">
+    <div class="sum">
+        <p>合计:</p>
+        <div>
+            <span>￥</span>
+            <span>266</span>
+        </div>
+    </div>
+    <div class="pay" >
+        <a href="#" class="">去支付</a>
+    </div>
+</div>
+
+
+
+</body>
+</html>

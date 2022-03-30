@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+<!--
+1. 继承性
+2. 层叠性
+3. 优先级
+.0.     1·1
+-->
+    <style>
+        .father .son .sun{
+            coloor: skyblue;
+            text-align: center;
+            font-size:2em;
+        }
+        .father{
+            /*盒子 的内容*/
+            coloor: skyblue;
+            text-align: center;
+            font-size:2em;
+            /*盒子的border属性*/
+            /*border-width: 10px;*/
+            /*border-style:dashed;*/
+            /*border-color: blue;*/
+            /* 连写：*/  border: 10px solid red;
+            border-left:10px dashed orange ;
+
+
+        /*    盒子的*/
+        }
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son">
+        <div class="sun">
+            孙子
+        </div>
+    </div>
+</div>
+</body>
+</html>

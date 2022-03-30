@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        /*.box{*/
+        /*    color: rebeccapurple;*/
+        /*}*/
+        /* 父标签选择  后代选择器 */
+        .box p{
+            color: firebrick;
+        }
+    /*  子代选择器*/
+        .box>p{
+        }
+    /*    并集选择器*/
+        p,div,.box{
+        }
+    /*    交集选择器*/
+        p.red{
+            color: red;
+        }
+
+    </style>
+
+</head>
+<body>
+<div  class="box">
+    <p class="red">复合选择器1</p>
+    <ul>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+        <li></li>
+    </ul>
+    <div class="red">
+        <p>复合选择器2</p>
+    </div>
+    
+</div>
+<p>复合选择器3</p>
+
+</body>
+</html>

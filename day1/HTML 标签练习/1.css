@@ -1,0 +1,14 @@
+html{
+    font-size: 10px;
+    background: url("1.jpg") bottom center;
+    background-size: cover;
+}
+body {
+    height: 500%;
+    weight:80%;
+    background-color: indianred}
+
+p {
+    color: blue;
+}
+

@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+     .box{
+         position: relative;
+         width:400px;
+         /*background-color: lightgray;*/
+         /*border-radius: 10px;*/
+         margin: 100px auto;
+     }
+     .box .psd{
+         width: 300px;
+         outline: none;
+         border: 0;
+         height:30px ;
+         border-bottom: 2px solid lightgray ;
+     }
+     .box .eye{
+         position: absolute;
+         top: -3px;
+         right: 50px;
+     }
+    </style>
+</head>
+<body>
+<div class="box">
+    <input class="psd" type="password" id="psd">
+    <img src="./images/close.png" alt="" class="eye">
+</div>
+<script>
+    // 选择事件源 --就是有变化的地方都要选中元素
+    var psd = document.querySelector('.box .psd')
+    var eye = document.querySelector('.box .eye')
+    var flag=0
+//    注册事件  eye.onclick
+    eye.onclick=function (){
+        //这里是一次性的写法，反复点击的话就需要用flag标签标记
+        this.src='./images/open.png'
+        psd.type='text'
+
+        if(flag===0){
+            this.src='./images/open.png'
+            psd.type='text'
+            flag=1
+        }
+        else{
+            this.src='./images/close.png'
+            psd.type='password'
+            flag=0
+        }
+
+
+    }
+
+</script>
+</body>
+</html>

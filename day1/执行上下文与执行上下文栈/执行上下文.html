@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<!--什么是执行上下文，执行上下文栈
+    简单来说执行上下文 就是一个函数执行时所涉及到 局部 全局的一些和函数，对不？
+    执行上下文栈  是一个行数开始执行时将所要涉及的其它函数入栈出栈的过程
+   -->
+<script>
+    console.log(a1,window.a1)
+    a2();
+    console.log(this)
+    var a1=3;
+    function a2()
+    {
+        console.log("a2()")
+        console.log(a2)
+        function fn(a1){
+            console.log('a3()')
+            console.log(a1)
+        }
+    }
+    a2()
+    fn()
+</script>
+<body>
+
+</body>
+</html>

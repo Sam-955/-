@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    let arr=[5,9,8,2,6,10,15]
+    if(arr.length<=1||(!Array.isArray(arr))){
+        alert("数组无效")
+    }
+    for (let i=1;i<arr.length;i++){
+
+        let element=arr[i]//保存当前待排序的元素,然后比较前面排好的元素
+                          // 前面排好的元素往后移
+        let j=i
+        // 与前面已排序列中的元素相比较，然后往后移
+        while(j-1>=0&&arr[j-1]>element){   // 注意这里j-1要大于等于0，如果不大于等于0 当J=1时就结束了，这个时候才
+            //                                  这个时候J才比较到索引为1 ，0还没有比较到
+            arr[j]=arr[j-1]
+            j--;
+        }
+        arr[j]=element
+    }
+    console.log(arr)
+//    时空 复杂度都是 n2 空间 o1
+</script>
+</body>
+</html>

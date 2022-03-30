@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        a:link {
+            color:red;
+        }
+        a:visited{
+            color:green;
+        }
+        a:hover{
+            color: pink;
+        }
+
+        a:active{
+            color:skyblue;
+        }
+        div {
+            width: 0px;
+            height: 0px;
+            /* background-color: pink; */
+
+            /* 方法一： */
+            /* border-top: 100px solid skyblue;
+            border-right: 100px solid yellow;
+            border-bottom: 100px solid purple;
+            border-left: 100px solid blue; */
+
+            /* 方法二： */
+            border: 100px solid transparent;
+            border-bottom-color: blue;
+        }
+    </style>
+</head>
+<body>
+<a href="#" >我是标签</a>
+<div></div>
+</body>
+</html>

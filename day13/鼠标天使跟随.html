@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            cursor: none!important;
+        }
+        img {
+            position: absolute;
+            top: 2px;
+        }
+    </style>
+</head>
+<body>
+<img src="images/angel.gif" alt="">
+<script>
+    var pic = document.querySelector('img');
+     console.log(pic.parentNode)
+    document.addEventListener("mousemove", move)
+    function move(e){
+        x=e.pageX;
+        y=e.pageY
+        pic.style.left=x-50+'px'
+        pic.style.top=y-40+'px'
+    }
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        .father{
+            width: 600px;
+            background-color:pink;
+        }
+        .son{
+            height:300px;
+            width: 100px;
+            background-color: skyblue;
+            float: left;
+        }
+        .father::after{
+            content: "";
+            display: block;
+            clear: both;
+            /*为了让增加的元素看不到伪元素*/
+            height: 0;
+            visibility: hidden;
+        }
+        /*.clear{*/
+        /*    clear:both*/
+        /*}*/
+
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son"></div>
+<!--    <div class="clear"></div>-->
+
+
+</div>
+
+
+</body>
+</html>

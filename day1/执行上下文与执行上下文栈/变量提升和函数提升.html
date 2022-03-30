@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>提升</title>
+</head>
+<!--提升一般指的是 未声明就使用的变量和方法-->
+<script>
+    var a= 3// 变量提升
+    function fn(){
+        console.log(a)
+        var a=4
+        console.log(a)
+    }
+    fn()
+    console.log(b)
+    fn2()  // 函数提升
+    var b=3
+    function fn2(){
+        console.log('fn2()')
+    }
+</script>
+<body>
+
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+    <style>
+        *{
+            margin: 0px;
+            padding: 0px;
+        }
+        body{
+            line-height:1 ;
+        }
+        .box{
+            width: 500px;
+            height: 400px;
+            /*background-color:pink;   辅助颜色看盒子大小*/
+            border: 1px solid #ccc;
+            padding: 41px 30px 0px;
+            box-sizing: border-box;
+        }
+        .box h2{
+            height: 41px;
+            /*background-color: pink;*/
+            border-bottom: 1px solid #cccccc;
+            box-sizing: border-box;
+            font-size: 30px;
+        }
+        .box ul{
+            list-style:none;
+        }
+        .box ul li {
+            height: 50px;
+            border-bottom: 1px dashed #cccccc;
+            line-height: 50px;
+            padding-left: 30px;
+        }
+        .box li a {
+            text-decoration: none;
+            color: darkgrey;
+            font-size: 18px;
+
+        }
+        .box li a:hover{
+            color: orange;
+        }
+
+    </style>
+</head>
+<body>
+<div class="box">
+   <h2>最新文章/New Articles</h2>
+    <ul>
+        <li><a href="#">字节招聘</a></li>
+        <li><a href="#">吉利招聘</a></li>
+        <li><a href="#">前端招聘</a></li>
+        <li><a href="#">后端招聘</a></li>
+        <li><a href="#">美工招聘</a></li>
+    </ul>
+</div>
+</body>
+</html>

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+
+</head>
+<body>
+<script type="text/javascript">
+    <!--        这里写一个定时器函数：检查每轮执行一轮是否是定时器所设定的时间-->
+    //获得当前时间
+    document.getElementById("cout").onclick=function (){alert("我错了我错了")}
+    //     function (){
+    //     var preTime= new Date()
+    //     console.log("点击按钮前----")
+    //     setTimeout(function (){
+    //         var nowTime =new Date()
+    //         console.log(nowTime.getTime()-preTime.getTime())},10)
+    //     console.log("点击按钮后------")
+    //
+    // }
+</script>
+<button id="cout" >定时器设定按钮</button>
+</body>
+</html>
+<!--
+····1. 定时器真的是定时执行吗？
+····2. 定时器的执行函数在主线程执行
+····3. 定时器如何实现?
+       事件循环模型
+
+-->

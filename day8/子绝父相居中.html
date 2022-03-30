@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <style>
+        .father {
+            /* 父相 */
+            position: relative;
+            width: 600px;
+            height: 600px;
+            background-color: pink;
+        }
+
+        .son {
+            /* 子绝 */
+            position: absolute;
+            left:50%;
+            top: 50%;
+            /*margin-left: -200px;*/
+            /*transform:translateX(-50%);*/
+            /*transform: translateY(-50%);  X Y 方向只能写一个*/
+            transform:translate(-50%,-50%);
+            width: 400px;
+            height: 400px;
+            background-color: blue;
+        }
+
+    </style>
+</head>
+<body>
+<div class="father">
+    <div class="son">
+    </div>
+</div>
+</body>
+</html>

@@ -1,0 +1,339 @@
+/*网站入口*/
+/*    轮播图 */
+.xtx-entry{
+    height: 500px;
+    background-color:#f5f5f5 ;
+}
+.xtx-entry .container{
+    position: relative;
+    height: 500px;
+    width: 1241px;
+    margin: 0 auto;
+/*    ps*/
+/*    background-color:pink ;*/
+/*    background: url("../uploads/banner_1.png");*/
+}
+.xtx-entry .container .category {
+    position: absolute;
+    left: 0;
+    top: 0;
+    height: 500px;
+    width: 251px;
+    background-color: rgba(0,0,0,0.8);
+}
+.xtx-entry .category a {
+    color: #fff;
+}
+.xtx-entry .container .category li{
+    /*position: absolute;*
+     */
+    position: relative;
+    height: 50px;
+    padding-left: 36px;
+    line-height: 50px;
+}
+.xtx-entry .category li:hover{
+    background-color:#27ba9b ;
+}
+.xtx-entry .container .category li span:first-child{
+    margin-left: 15px;
+}
+.xtx-entry .container .category li span{
+    font-size: 14px;
+}
+.xtx-entry .container li a::after{
+    content: "";
+    position:absolute;
+    top: 19px;
+    right: 19px;
+    width: 6px;
+    height: 11px ;
+    background: url("../images/sprites.png")  -80px -110px;
+}
+
+/*左右按钮*/
+.xtx-entry .pre{
+    width: 45px;
+    height: 45px;
+    position: absolute;
+    left: 262px;
+    bottom: 228px;
+    background: rgba(0,0,0,0.2)  url('../images/sprites.png') 13px -60px;
+    border-radius: 50%;
+}
+.xtx-entry .next {
+    position: absolute;
+    top: 228px;
+    right: 10px;
+    width: 45px;
+    height: 45px;
+    border-radius: 50%;
+    background: rgba(0,0,0,.2) url('../images/sprites.png') -22px -60px;
+}
+.xtx-entry .litte-box:hover .next{
+    background: rgba(0,0,0,0.5) url('../images/sprites.png') -22px -60px;
+}
+.xtx-entry .indicator{
+    position: absolute;
+    left: 680px;
+    bottom: 31px;
+    width: 110px;
+    height: 10px;
+    /*ps*/
+    /*background-color: red;*/
+}
+.xtx-entry .indicator li{
+    float: left;
+    width: 10px;
+    height: 10px;
+    background:rgba(255,255,255,0.43) ;
+    border-radius: 50%;
+
+    margin-right: 15px;
+}
+.xtx-entry .indicator li:last-child{
+    margin-right: 0;
+}
+.xtx-entry .indicator li:hover{
+    background-color: #ffffff;
+}
+
+/*新鲜好物 */
+
+.xtx-purchase{
+    height: 520px;
+    /*background-color: red;*/
+}
+.xtx-purchase .fresh-container{
+    height:114px
+}
+.xtx-purchase .fresh-container h2{
+    font-size: 29px;
+    color: #333333;
+    line-height: 114px;
+    float: left;
+    height: 114px;
+    /*width: 100%;*/
+}
+.xtx-purchase .fresh-container h2 span{
+    margin-left: 34px;
+    color: #999999;
+    font-size: 16px;
+    /*vertical-align: bottom;*/
+}
+.xtx-purchase .fresh-container a{
+    line-height: 114px;
+    float: right;
+    height: 114px;
+    font-size: 16px;
+    color: #999999;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.xtx-purchase .fresh-container a::after{
+    content: "";
+    width: 7px;
+    height: 13px;
+    display: inline-block;
+    margin-left: 13px;
+    background: url("../images/sprites.png") 0 -110px;
+}
+.fresh-container .fresh-container a:hover{
+opacity: 0.5;
+}
+
+.xtx-purchase .image{
+    height: 406px;
+/*!*    ps*!*/
+/*    background-color: red;*/
+}
+.xtx-purchase .image li{
+    float: left;
+    margin-right: 8px;
+    height:405px ;
+    width:304px ;
+    background-color:#f0f9f4 ;
+    line-height: 1;
+    text-align: center;
+    overflow: hidden;
+}
+.xtx-purchase .image li:last-child{
+    margin-right: 0;
+}
+.xtx-purchase .image li img{
+    width: 100%;
+}
+.xtx-purchase .image li h3{
+    height:40px ;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.xtx-purchase .image p{
+    color: #9a2e1f;
+    font-size: 23px;
+}
+.xtx-purchase .image li span{
+    font-size: 17px;
+
+}
+.xtx-purchase .image a{
+    transition:0.6s;
+
+}
+.xtx-purchase .image a:hover{
+    opacity: 0.5;
+    color: rgba(0,0,0,0.3);
+}
+
+/*人气推荐*/
+.xtx-recommend{
+    height: 520px;
+    /*background-color: red;*/
+}
+.xtx-recommend .fresh-container{
+    height:114px
+}
+.xtx-recommend .fresh-container h2{
+    font-size: 29px;
+    color: #333333;
+    line-height: 114px;
+    float: left;
+    height: 114px;
+    /*width: 100%;*/
+}
+.xtx-recommend .fresh-container h2 span{
+    margin-left: 34px;
+    color: #999999;
+    font-size: 16px;
+    /*vertical-align: bottom;*/
+}
+.xtx-recommend .fresh-container a{
+    line-height: 114px;
+    float: right;
+    height: 114px;
+    font-size: 16px;
+    color: #999999;
+    opacity: 1;
+    transition: opacity 0.5s;
+}
+.xtx-recommend .fresh-container a::after{
+    content: "";
+    width: 7px;
+    height: 13px;
+    display: inline-block;
+    margin-left: 13px;
+    background: url("../images/sprites.png") 0 -110px;
+}
+.xtx-recommend .fresh-container .fresh-container a:hover{
+    opacity: 0.5;
+}
+.xtx-recommend .image{
+    height: 406px;
+    /*!*    ps*!*/
+    /*    background-color: red;*/
+}
+.xtx-recommend .image li{
+    float: left;
+    margin-right: 8px;
+    height:405px ;
+    width:304px ;
+    background-color:#f0f9f4 ;
+    line-height: 1;
+    text-align: center;
+    overflow: hidden;
+}
+.xtx-recommend .image li:last-child{
+    margin-right: 0;
+}
+.xtx-recommend .image li img{
+    width: 100%;
+}
+.xtx-recommend .image li h3{
+    height:40px ;
+    margin-top: 20px;
+    font-size: 20px;
+    font-weight: 400;
+}
+.xtx-recommend .image p{
+    color: #999999;
+    font-size: 16px;
+}
+.xtx-recommend .image li span{
+    font-size: 17px;
+
+}
+.xtx-recommend .image a{
+    transition: 0.6s;
+
+}
+.xtx-recommend .image a:hover{
+    opacity: 0.5;
+    color: rgba(0,0,0,0.3);
+}
+
+/*热门品牌*/
+.xtx-brand{
+    height: 466px;
+/*    ps*/
+    background-color: gainsboro;
+}
+.xtx-brand .box{
+    height: 466px;
+    /*background-color: skyblue;*/
+}
+.xtx-brand .header{
+    position: relative;
+    font-size: 16px;
+    color: #333333;
+    line-height: 112px;
+    height: 112px;
+    /*background-color: pink;*/
+}
+.xtx-brand .header h1 span{
+    margin-left: 19px;
+    font-size: 16px;
+    color: #999999;
+}
+.xtx-brand .header a{
+    position: absolute;
+    top:78px;
+    right:0px;
+    width: 20px;
+    height: 20px;
+    background: rgba(192,192,192,1) url("../images/sprites.png") -40px -70px;
+}
+
+/* 这里有问题  */
+.xtx-brand .header a:last-child{
+    position: absolute;
+    top:78px;
+    right:32px;
+    width: 20px;
+    height: 20px;
+    background-color:#e2e2e2;
+    background: rgba(192,192,192,0.8) url("../images/sprites.png") 0px -70px;
+    /*border-radius: 50%;*/
+}
+.xtx-brand .header a:last-child:hover{
+    background: rgba(38,185,155,0.8) url("../images/sprites.png") -0px -70px;
+}
+.xtx-brand .image{
+    height: 308px;
+    /*background-color: palegreen;*/
+}
+
+.xtx-brand .image li{
+    float:left;
+    height:306px;
+    width: 244px;
+    margin-right: 4px;
+    background-color: purple;
+    transition: li 4s;
+}
+.xtx-brand .image img{
+    width: 100%;
+}
+.xtx-brand .image li:hover{
+    opacity: 0.5;
+}
